@@ -1,4 +1,7 @@
 import {useEffect, useState} from "react";
+import NavBar from "./Components/NavBar";
+
+import {RootRouter} from "./utils/router";
 
 import './App.css';
 
@@ -12,7 +15,9 @@ function App() {
   }, []);
 
   return (
-    <div>{!data ? 'Loading...' : data}</div>
+    <div>
+      <RootRouter />
+    </div>
   );
 }
 
