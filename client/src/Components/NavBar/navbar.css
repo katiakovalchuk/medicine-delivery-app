@@ -1,0 +1,18 @@
+.navbar {
+  padding: 10px;
+}
+.navbar :first-child {
+  border-right: 2px solid #000000;
+}
+a {
+  display: inline-block;
+  color: blue;
+  text-decoration: none;
+  padding: 5px 20px;
+  font-size: 20px;
+}
+
+.active {
+  font-weight: 600;
+  text-decoration: underline;
+}
