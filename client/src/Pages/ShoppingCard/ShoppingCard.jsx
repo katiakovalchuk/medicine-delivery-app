@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import './shoppingCard.css';
 import NavBar from "../../Components/NavBar";
 
 const ShoppingCard = () => {
+
   return (
     <>
       {/*<NavBar />*/}
