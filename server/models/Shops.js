@@ -4,6 +4,10 @@ const shopSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
+  },
+  medicines: {
+    type: Array,
+    required: true,
   }
 });
 

@@ -1,0 +1,29 @@
+.medicine-card {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 300px;
+}
+.medicine-card img {
+  width: 100%;
+}
+.medicine-card-content {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  min-height: 70px;
+  padding: 10px;
+}
+.medicine-card-content button {
+  padding: 7px 15px;
+  min-width: 100px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.medicine-card-title {
+  font-size: 18px;
+  font-weight: 600;
+;
+}

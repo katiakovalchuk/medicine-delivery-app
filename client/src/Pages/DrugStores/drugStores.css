@@ -1,15 +1,35 @@
 .store {
   display: flex;
+  gap: 1rem;
+}
+.store-shops, .store-medicines {
+  display: flex;
   flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+.store-shops {
+  align-items: center;
   gap: 1rem;
   width: 30%;
-  padding: 10px;
-  text-align: center;
-  /*border: 1px solid red;*/
 }
-.store-card {
+.store-medicines {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 70%;
+}
+.store-shop-card {
   border: 1px solid #cccccc;
   border-radius: 5px;
   cursor: pointer;
   padding: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+.card-active {
+  background-color: #cccccc4c;
 }
