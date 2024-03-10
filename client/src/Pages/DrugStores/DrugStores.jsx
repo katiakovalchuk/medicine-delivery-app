@@ -49,7 +49,7 @@ const DrugStores = () => {
             {
               selectedShop && <div className="store-medicines">
                 {
-                  shopList.find((shop) => shop._id === selectedShop)?.medicines?.map((medicine) => <MedicineCard key={medicine} medicine={medicine} onAddToCart={handleAddToCart} />)
+                  shopList.find((shop) => shop._id === selectedShop)?.medicines?.map((medicine) => <MedicineCard key={selectedShop + medicine} medicine={medicine} onAddToCart={handleAddToCart} />)
                 }
               </div>
             }
