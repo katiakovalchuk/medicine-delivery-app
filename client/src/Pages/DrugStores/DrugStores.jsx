@@ -20,19 +20,16 @@ const DrugStores = () => {
         }));
   }, []);
 
-  useEffect(() => {
-    if (medicinesList.length!== 0) {
-      setMedicinesList([]);
-    }
-  }, [selectedShop]);
-
   const handleAddToCart = (medicine) => {
     if (!medicinesList.map((medicine) => medicine.name).includes(medicine.name)){
       setMedicinesList((prev) => [...prev, medicine]);
     }
   };
 
-  const handleShopClick = (shopId) => setSelectedShop(shopId);
+  const handleShopClick = (shopId) => {
+    setSelectedShop(shopId);
+    setMedicinesList([]);
+  };
 
   return (
     <>

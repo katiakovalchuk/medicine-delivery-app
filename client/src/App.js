@@ -1,7 +1,5 @@
-import {useEffect, useState} from "react";
-import NavBar from "./Components/NavBar";
 
-import {RootRouter} from "./utils/router";
+import {RootRouter} from './utils/router';
 
 import './App.css';
 
