@@ -1,3 +1,6 @@
+.shopping-cart {
+  margin: 20px 30px;
+}
 .shopping-cart-data {
   display: flex;
   gap: 1rem;

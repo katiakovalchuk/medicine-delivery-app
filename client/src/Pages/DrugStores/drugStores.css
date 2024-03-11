@@ -1,6 +1,7 @@
 .store {
   display: flex;
   gap: 1rem;
+  margin: 20px 30px;
 }
 .store-shops, .store-medicines {
   display: flex;
