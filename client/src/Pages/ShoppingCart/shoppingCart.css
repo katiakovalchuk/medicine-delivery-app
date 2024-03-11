@@ -1,0 +1,15 @@
+.shopping-cart-data {
+  display: flex;
+  gap: 1rem;
+}
+.shopping-contact, .shopping-items {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+.shopping-contact label {
+  margin: 10px 0;
+}
