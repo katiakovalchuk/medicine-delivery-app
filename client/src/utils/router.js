@@ -1,7 +1,7 @@
 import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
 
 import DrugStores from "../Pages/DrugStores";
-import ShoppingCard from "../Pages/ShoppingCard";
+import ShoppingCard from "../Pages/ShoppingCart";
 import NavBar from "../Components/NavBar";
 
 

@@ -1,3 +1,3 @@
-import ShoppingCard from './ShoppingCard';
+import ShoppingCart from './ShoppingCart';
 
-export default ShoppingCard;
+export default ShoppingCart;

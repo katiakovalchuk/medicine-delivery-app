@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 
-import MedicineCard from "../../Components/MedicineCard";
+import MedicineCard from '../../Components/MedicineCard';
+import { ShoppingCartContext } from '../../context/shoppingCartContext';
 
 import './drugStores.css';
 
 const DrugStores = () => {
+  const { medicinesList, setMedicinesList, selectedShop, setSelectedShop } = useContext(ShoppingCartContext);
   const [shopList, setShopList] = useState(null);
-  const [medicinesList, setMedicinesList] = useState([]);
-  const [selectedShop, setSelectedShop] = useState(null);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const DrugStores = () => {
   }, [selectedShop]);
 
   const handleAddToCart = (medicine) => {
-    if (!medicinesList.includes(medicine)){
+    if (!medicinesList.map((medicine) => medicine.name).includes(medicine.name)){
       setMedicinesList((prev) => [...prev, medicine]);
     }
   };
@@ -49,7 +49,7 @@ const DrugStores = () => {
             {
               selectedShop && <div className="store-medicines">
                 {
-                  shopList.find((shop) => shop._id === selectedShop)?.medicines?.map((medicine) => <MedicineCard key={selectedShop + medicine} medicine={medicine} onAddToCart={handleAddToCart} />)
+                  shopList?.find((shop) => shop._id === selectedShop)?.medicines?.map((medicine) => <MedicineCard key={selectedShop + medicine.name} medicine={medicine} onAddToCart={handleAddToCart} />)
                 }
               </div>
             }

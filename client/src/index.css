@@ -6,3 +6,13 @@
 button[disabled] {
   cursor: unset;
 }
+input {
+  width: auto;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid #bfbdbd;
+  background-color: #f9fafb;
+  line-height: 20px;
+  font-weight: 400;
+}

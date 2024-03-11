@@ -1,8 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import './shoppingCard.css';
+import ShoppingCard from '../../Components/ShoppingCard';
+import {ShoppingCartContext} from '../../context/shoppingCartContext';
 
-const ShoppingCard = () => {
+import './shoppingCart.css';
+
+const ShoppingCart = () => {
+  const { medicinesList } = useContext(ShoppingCartContext);
+  const navigate = useNavigate();
+  const [basketList, setBasketList] = useState(medicinesList.map((medicine) => ({...medicine, count: 1})));
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    setTotalPrice(basketList.reduce((acc, medicine) => acc + Number(medicine?.price * medicine?.count), 0));
+  }, [basketList]);
 
   return (
     <form className="shopping-cart">
@@ -41,11 +53,21 @@ const ShoppingCard = () => {
             />
           </label>
         </div>
-        <div className="shopping-items">Shopping data</div>
+        <div className="shopping-items">
+          {
+            medicinesList?.map((medicine) => <ShoppingCard key={medicine.name} medicine={medicine} setBasketList={setBasketList} />)
+          }
+        </div>
       </div>
-      <button type="submit">Submit</button>
+      <div className="shopping-cart-footer">
+        <div>Total price: {totalPrice}</div>
+        <button type="submit" onClick={(e) => {
+          e.preventDefault();
+          navigate('/');
+        }}>Submit</button>
+      </div>
     </form>
   );
 };
 
-export default ShoppingCard;
+export default ShoppingCart;

@@ -1,0 +1,26 @@
+.shopping-card {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+.shopping-card img {
+  width: 50%;
+}
+.shopping-card input {
+  width: 100%;
+}
+.shopping-card-data {
+  padding: 10px;
+  width: 50%;
+  text-align: center;
+  line-height: 2;
+}
+.shopping-card-data input {
+  text-align: center;
+}
+.shopping-card-title {
+  font-size: 22px;
+  font-weight: 600;
+}
