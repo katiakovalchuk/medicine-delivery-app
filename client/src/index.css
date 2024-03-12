@@ -16,3 +16,6 @@ input {
   line-height: 20px;
   font-weight: 400;
 }
+button:disabled {
+  cursor: not-allowed;
+}
