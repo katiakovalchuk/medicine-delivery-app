@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import UserContextProvider from './context/userContext';
 import ShoppingCartContextProvider from './context/shoppingCartContext';
 
 import './index.css';
@@ -10,9 +11,11 @@ import './index.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ShoppingCartContextProvider>
-      <App />
-    </ShoppingCartContextProvider>
+    <UserContextProvider>
+      <ShoppingCartContextProvider>
+        <App />
+      </ShoppingCartContextProvider>
+    </UserContextProvider>
   </React.StrictMode>
 );
 
