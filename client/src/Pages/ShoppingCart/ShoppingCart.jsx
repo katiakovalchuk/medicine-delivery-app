@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useContext, useEffect, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 
 import ShoppingCard from '../../Components/ShoppingCard';
 import {ShoppingCartContext} from '../../context/shoppingCartContext';
@@ -7,12 +7,13 @@ import {ShoppingCartContext} from '../../context/shoppingCartContext';
 import './shoppingCart.css';
 
 const ShoppingCart = () => {
-  const { medicinesList, setMedicinesList } = useContext(ShoppingCartContext);
+  const {medicinesList, setMedicinesList} = useContext(ShoppingCartContext);
   const navigate = useNavigate();
   const [totalPrice, setTotalPrice] = useState(0);
+  console.log('totalPrice', totalPrice);
 
   useEffect(() => {
-    setTotalPrice(medicinesList.reduce((acc, medicine) => acc + Number(medicine?.price * medicine?.count), 0));
+    setTotalPrice(medicinesList.reduce((acc, medicine) => acc + Number(medicine?.price * (medicine?.count || 1)), 0));
   }, [medicinesList]);
 
   return (
@@ -54,7 +55,7 @@ const ShoppingCart = () => {
         </div>
         <div className="shopping-items">
           {
-            medicinesList?.map((medicine) => <ShoppingCard key={medicine.name} medicine={medicine} />)
+            medicinesList?.map((medicine) => <ShoppingCard key={medicine.name} medicine={medicine}/>)
           }
         </div>
       </div>
@@ -64,7 +65,8 @@ const ShoppingCart = () => {
           e.preventDefault();
           setMedicinesList([]);
           navigate('/');
-        }}>Submit</button>
+        }}>Submit
+        </button>
       </div>
     </form>
   );
